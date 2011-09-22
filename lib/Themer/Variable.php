@@ -32,7 +32,7 @@ class Variable {
   {
     $block = self::_simple($block, $search, $replace);
     
-    if($transformable === TRUE)
+    if ($transformable === TRUE)
     {
       $block = self::_plaintext($block, $search, $replace);
       $block = self::_js($block, $search, $replace);    
