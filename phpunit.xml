@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+  bootstrap="test/bootstrap.php"
+  colors="true"
+  stopOnFailure="false">
+  <logging>
+    <log
+      type="coverage-html" 
+      target="build/coverage"
+      yui="true" />
+  </logging>
+  <filter>
+    <whitelist addUncoveredFilesFromWhitelist="true">
+      <directory suffix=".php">lib</directory>
+    </whitelist>
+  </filter>
+  <testsuites>
+    <directory suffix="_Test.php">test/Themer</directory>
+  </testsuites>
+</phpunit>
