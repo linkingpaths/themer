@@ -28,7 +28,7 @@ class Variable {
    * @param   bool    whether the variable is transformable or not
    * @return  string  the parsed block
    */
-  public static function render($block, $search, $replace = '', $transformable = TRUE)
+  static public function render($block, $search, $replace = '', $transformable = TRUE)
   {
     $block = self::_simple($block, $search, $replace);
     

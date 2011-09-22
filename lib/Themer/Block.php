@@ -33,7 +33,7 @@ class Block {
    * @param   string  the block tag to strip
    * @return  string  the stripped block
    */
-  public static function render($block, $tag)
+  static public function render($block, $tag)
   {
     return preg_replace_callback(
       self::getMatcher($tag),
@@ -52,7 +52,7 @@ class Block {
    * @param   bool    whether or not we should render the block
    * @return  string  the stripped block
    */
-  public static function renderIf($block, $tag, $render = FALSE)
+  static public function renderIf($block, $tag, $render = FALSE)
   {
     $tag = self::formatIfBlockTag($tag);
 
@@ -80,7 +80,7 @@ class Block {
    * @param   string  the given block
    * @return  string  the cleaned up block
    */
-  public static function cleanup($block)
+  static public function cleanup($block)
   {
     return preg_replace(self::MATCHER, '', $block);
   }
@@ -94,7 +94,7 @@ class Block {
    * @param   string  the block tag to remove
    * @return  string  the cleaned up block
    */
-  public static function remove($block, $tag)
+  static public function remove($block, $tag)
   {
     foreach (self::find($block, $tag) as $b)
     {
@@ -114,7 +114,7 @@ class Block {
    * @param   string  the tag to search for
    * @return  array   empty array for no matches, else the matches
    */
-  public static function find($block, $tag)
+  static public function find($block, $tag)
   {
     if ( ! preg_match_all(self::getMatcher($tag), $block, $matches))
     {
@@ -134,7 +134,7 @@ class Block {
    * @param   string  the tag name to use
    * @return  string  the formated block pattern matcher
    */
-  public static function getMatcher($tag = '')
+  static public function getMatcher($tag = '')
   {
     return '/{block:('.$tag.')}(.*?){\/block:\\1}/is';
   }
@@ -148,7 +148,7 @@ class Block {
    * @param   string  the tag name to format
    * @return  string  the formatted tag
    */
-  public static function formatIfBlockTag($tag = '')
+  static public function formatIfBlockTag($tag = '')
   {
     return str_replace(array(" ", "_"), "", $tag);
   }
