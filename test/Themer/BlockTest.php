@@ -8,7 +8,7 @@
  
 use Themer\Block;
 
-class Block_Test extends PHPUnit_Framework_TestCase {
+class BlockTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @test
@@ -158,5 +158,5 @@ class Block_Test extends PHPUnit_Framework_TestCase {
   }
 }
 
-/* End of file Block_Test.php */
-/* Location: ./test/Themer/Block.php */
+/* End of file BlockTest.php */
+/* Location: ./test/Themer/BlockTest.php */

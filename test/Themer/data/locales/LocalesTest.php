@@ -8,7 +8,7 @@
 
 use Symfony\Component\Yaml\Yaml; 
  
-class Locales_Test extends PHPUnit_Framework_TestCase {
+class LocalesTest extends PHPUnit_Framework_TestCase {
 
   static public $indexes = array();
 
@@ -49,5 +49,5 @@ class Locales_Test extends PHPUnit_Framework_TestCase {
     }
   }
 }
-/* End of file Locales_Test.php */
-/* Location: ./test/Themer/data/locales/Locales_Test.php */
+/* End of file LocalesTest.php */
+/* Location: ./test/Themer/data/locales/LocalesTest.php */

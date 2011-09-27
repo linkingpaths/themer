@@ -8,7 +8,7 @@
  
 use Themer\Variable;
 
-class Variable_Test extends PHPUnit_Framework_TestCase {
+class VariableTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @test
@@ -170,5 +170,5 @@ EOF;
   }
 }
 
-/* End of file Variable.php */
-/* Location: ./test/Themer/Variable.php */
+/* End of file VariableTest.php */
+/* Location: ./test/Themer/VariableTest.php */
