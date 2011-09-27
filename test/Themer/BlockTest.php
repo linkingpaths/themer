@@ -80,7 +80,7 @@ class BlockTest extends PHPUnit_Framework_TestCase {
    * @test
    * @covers  Themer\Block::cleanup
    */
-  public function cleanup_removes_all_valid_blocks()
+  public function cleans_up_valid_blocks()
   {
     $block = "{block:foo}foo{/block:foo}{block:bar}bar{/block:bar}";
 
@@ -134,7 +134,7 @@ class BlockTest extends PHPUnit_Framework_TestCase {
    * @covers  Themer\Block::find
    * @covers  Themer\Block::getMatcher
    */
-  public function finds_with_no_results_returns_an_array()
+  public function find_with_no_results_returns_an_array()
   {
     $this->assertEquals(
       array(), Block::find('', 'nonexistent'),
