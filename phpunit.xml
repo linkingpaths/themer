@@ -15,6 +15,6 @@
     </whitelist>
   </filter>
   <testsuites>
-    <directory suffix="_Test.php">test/Themer</directory>
+    <directory suffix="Test.php">test/Themer</directory>
   </testsuites>
 </phpunit>
