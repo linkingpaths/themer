@@ -37,7 +37,27 @@ class Autoloader {
     {
       static::$_loader = new UniversalClassLoader;
       static::$_loader->registerNamespace('Themer', realpath(__DIR__.'/../'));
-      static::$_loader->register();
+      spl_autoload_register(array(__CLASS__, 'load'), TRUE, FALSE);
+    }
+  }
+  
+  /**
+   * Loads the given class.
+   *
+   * @static
+   * @access  public
+   * @param   string  the class name to load
+   * @return  void
+   */
+  static public function load($class)
+  {
+    if ($file = static::$_loader->findFile($class))
+    {
+      require $file;
+    }
+    elseif ($file = stream_resolve_include_path(str_replace('\\', DIRECTORY_SEPARATOR, $class).'.php'))
+    {
+      require $file;
     }
   }
   

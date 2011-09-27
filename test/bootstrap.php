@@ -4,10 +4,14 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL | E_STRICT);
 
-// Load up the autoloader.
-require_once realpath(__DIR__.'/../lib/Themer/Autoloader.php');
-Themer\Autoloader::register();
+if ( ! defined('THEMER_BASEPATH'))
+{
+  define('THEMER_BASEPATH', realpath(__DIR__.'/../lib/Themer'));
+}
 
+// Load up the autoloader.
+require_once THEMER_BASEPATH.'/Autoloader.php';
+Themer\Autoloader::register();
 
 PHP_CodeCoverage_Filter::getInstance()->addDirectoryToBlacklist(PEAR_INSTALL_DIR);
 PHP_CodeCoverage_Filter::getInstance()->addDirectoryToBlacklist(PHP_LIBDIR);	
