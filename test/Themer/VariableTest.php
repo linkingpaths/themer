@@ -41,7 +41,7 @@ class VariableTest extends PHPUnit_Framework_TestCase {
 
     $this->assertEquals(
       $parsed, Variable::render('{Plaintextvariable}', $search, $replace),
-      'Variable::render did not render the tag "{plaintext:variable}" correctly.'
+      'Variable::render did not render the tag "{Plaintextvariable}" correctly.'
     );
   }
 
@@ -60,7 +60,7 @@ class VariableTest extends PHPUnit_Framework_TestCase {
 
     $this->assertEquals(
       $parsed, Variable::render('{JSvariable}', $search, $replace),
-      'Variable::render did not render the tag "{plaintext:variable}" correctly.'
+      'Variable::render did not render the tag "{JSvariable}" correctly.'
     );
   }
 
@@ -79,7 +79,7 @@ class VariableTest extends PHPUnit_Framework_TestCase {
 
     $this->assertEquals(
       $parsed, Variable::render('{JSPlaintextvariable}', $search, $replace),
-      'Variable::render did not render the tag "{plaintext:variable}" correctly.'
+      'Variable::render did not render the tag "{JSPlaintextvariable}" correctly.'
     );
   }
 
@@ -98,7 +98,7 @@ class VariableTest extends PHPUnit_Framework_TestCase {
 
     $this->assertEquals(
       $parsed, Variable::render('{URLEncodedvariable}', $search, $replace),
-      'Variable::render did not render the tag "{plaintext:variable}" correctly.'
+      'Variable::render did not render the tag "{URLEncodedvariable}" correctly.'
     );
   }
 
