@@ -19,32 +19,32 @@ class LocalesTest extends PHPUnit_Framework_TestCase {
 
   // --------------------------------------------------------------------
 
-  public function localesProvider()
-  {
-    $locales = array();
- 
-    foreach (glob(THEMER_BASEPATH.'/data/locales/*.yml') as $file)
-    {
-      array_push($locales, array(basename($file, '.yml'), $file));
-    }
-    
-    return $locales;
-  }
-
   /**
   * @test
-  * @dataProvider  localesProvider
   */
-  public function locales_contain_correct_indexes($locale, $file)
+  public function english()
   {
-    $data = Yaml::parse($file);
+    $this->runLocaleTest('en');
+  }
+
+  // --------------------------------------------------------------------
+
+  private function getLocale($locale)
+  {
+    $file =  THEMER_BASEPATH."/data/locales/$locale.yml";
+    return Yaml::parse($file);
+  }
+
+  private function runLocaleTest($locale)
+  {
+    $data = $this->getLocale($locale);
     $keys = array_keys($data);
-    
+
     foreach (static::$indexes as $index)
     {
       $this->assertContains(
         $index, $keys,
-        "The locale file '$locale.yml' did not contain the expected key: $index."
+        "The locales '$locale.yml' did not contain the index '$index'."
       );
     }
   }
