@@ -30,14 +30,14 @@ class Variable {
    */
   static public function render($block, $search, $replace = '', $transformable = TRUE)
   {
-    $block = self::_simple($block, $search, $replace);
+    $block = self::renderSimple($block, $search, $replace);
     
     if ($transformable === TRUE)
     {
-      $block = self::_plaintext($block, $search, $replace);
-      $block = self::_js($block, $search, $replace);    
-      $block = self::_jsplaintext($block, $search, $replace);
-      $block = self::_urlencoded($block, $search, $replace);
+      $block = self::renderPlaintext($block, $search, $replace);
+      $block = self::renderJS($block, $search, $replace);    
+      $block = self::renderJSPlaintext($block, $search, $replace);
+      $block = self::renderURLEncoded($block, $search, $replace);
     }
     
     return $block;
@@ -47,13 +47,13 @@ class Variable {
    * Simply replace the tag with the value.
    *
    * @static
-   * @access  private
+   * @access  public
    * @param   string  the block to parse
    * @param   string  the tag name to replace
    * @param   string  the replacement value
    * @return  string  the formatted value
    */
-  private static function _simple($block, $search, $replace = '')
+  public static function renderSimple($block, $search, $replace = '')
   {
     return preg_replace('/{'.$search.'}/', $replace, $block);
   }
@@ -62,13 +62,13 @@ class Variable {
    * Replace a Plaintext tagged variable with the plaintext value.
    *
    * @static
-   * @access  private
+   * @access  public
    * @param   string  the block to parse
    * @param   string  the tag name to replace
    * @param   string  the replacement value
    * @return  string  the formatted value
    */
-  private static function _plaintext($block, $search, $replace = '')
+  public static function renderPlaintext($block, $search, $replace = '')
   {
     
     return preg_replace('/{Plaintext'.$search.'}/i', htmlspecialchars($replace), $block);
@@ -78,13 +78,13 @@ class Variable {
    * Replace a JS tagged variable with the JSON encoded value.
    * 
    * @static
-   * @access  private
+   * @access  public
    * @param   string  the block to parse
    * @param   string  the tag name to replace
    * @param   string  the replacement value
    * @return  string  the formatted value
    */
-  private static function _js($block, $search, $replace = '')
+  public static function renderJS($block, $search, $replace = '')
   {
     return preg_replace('/{JS'.$search.'}/i', json_encode($replace), $block);
   }
@@ -94,13 +94,13 @@ class Variable {
    * encoded value.
    * 
    * @static
-   * @access  private
+   * @access  public
    * @param   string  the block to parse
    * @param   string  the tag name to replace
    * @param   string  the replacement value
    * @return  string  the formatted value
    */
-  private static function _jsplaintext($block, $search, $replace = '')
+  public static function renderJSPlaintext($block, $search, $replace = '')
   {
     $replace = json_encode(htmlspecialchars($replace));
     return preg_replace('/{JSPlaintext'.$search.'}/i', $replace, $block);
@@ -110,13 +110,13 @@ class Variable {
    * Replace a URLEncoded tagged variable with a url encoded value.
    *
    * @static
-   * @access  private
+   * @access  public
    * @param   string  the block to parse
    * @param   string  the tag name to replace
    * @param   string  the replacement value
    * @return  string  the formatted value
    */
-  private static function _urlencoded($block, $search, $replace = '')
+  public static function renderURLEncoded($block, $search, $replace = '')
   {
     return preg_replace('/{URLEncoded'.$search.'}/i', urlencode($replace), $block);
   }
