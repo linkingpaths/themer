@@ -104,31 +104,32 @@ class VariableTest extends PHPUnit_Framework_TestCase {
    */
   public function renders_multiple_variable_occurrences_in_a_given_block()
   {
-    $block = '';
-    $value = "& Themer is a PHP project%!}";
+    $value        = "& Themer is a PHP project%!}";
+    $plaintext    = htmlspecialchars($value);
+    $js           = json_encode($value);
+    $jsplaintext  = json_encode($plaintext);
+    $urlencoded   = urlencode($value);
 
-    $search_and_replace = array(
-      "{variable}"            => $value,
-      "{Plaintextvariable}"   => htmlspecialchars($value),
-      "{JSVariable}"          => json_encode($value),
-      "{JSPlaintextvariable}" => json_encode(htmlspecialchars($value)),
-      "{URLEncodedvariable}"  => urlencode($value)
+    $block = <<<EOF
+{variable}
+{Plaintextvariable}
+{JSVariable}
+{JSPlaintextvariable}
+{URLEncodedvariable}
+EOF;
+
+    $expected = <<<EOF
+$value
+$plaintext
+$js
+$jsplaintext
+$urlencoded
+EOF;
+
+    $this->assertEquals(
+      $expected, Variable::render($block, 'variable', $value, TRUE),
+      "Variable::render did not replace all possible variables correctly."
     );
-
-    foreach ($search_and_replace as $k => $v)
-    {
-      $block .= "-".$k;
-    }
-
-    $rendered = Variable::render($block, 'variable', $value);
-
-    foreach ($search_and_replace as $k => $expected)
-    {
-      $this->assertContains(
-        "-".$expected, $rendered,
-        "Variable::render did not render the $k tag correctly"
-      );
-    }
   }
 
   /**
