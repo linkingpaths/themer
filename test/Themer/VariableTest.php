@@ -5,10 +5,9 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
- 
-use Themer\Variable;
+namespace Themer;
 
-class VariableTest extends PHPUnit_Framework_TestCase {
+class VariableTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test

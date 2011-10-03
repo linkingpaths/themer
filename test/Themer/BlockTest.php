@@ -5,10 +5,9 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
- 
-use Themer\Block;
+namespace Themer;
 
-class BlockTest extends PHPUnit_Framework_TestCase {
+class BlockTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
