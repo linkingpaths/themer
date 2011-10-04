@@ -63,7 +63,9 @@ class ThemeTest extends \PHPUnit_Framework_TestCase {
    */
   public function throws_exception_for_non_existent_file()
   {
-    $this->setExpectedException('InvalidArgumentException');
+    $this->setExpectedException(
+      'InvalidArgumentException', 'Theme file is invalid'
+    );
 
     new Theme('invalid-file-090980.html');
   }
@@ -74,8 +76,11 @@ class ThemeTest extends \PHPUnit_Framework_TestCase {
    */
   public function throws_exception_for_non_readable_file()
   {
-    $this->setExpectedException('InvalidArgumentException');
-    new Theme("http://invalid-url.asdklfaskd;jfhkl");
+    $this->setExpectedException(
+      'InvalidArgumentException', 'Theme file is invalid'
+    );
+
+    new Theme("http://fake.github.com/");
   }
 
   /**

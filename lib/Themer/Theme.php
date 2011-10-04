@@ -58,11 +58,6 @@ class Theme {
     }
     else
     {
-      if ( ! file_exists($theme))
-      {
-        throw new \InvalidArgumentException('Theme file does not exist: '.$theme);
-      }
-
       if (FALSE == ($contents = @file_get_contents($theme)))
       {
         throw new \InvalidArgumentException('Theme file is invalid: '.$theme);
