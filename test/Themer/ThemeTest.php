@@ -10,18 +10,6 @@ namespace Themer;
 use Themer\Theme;
 
 class ThemeTest extends \PHPUnit_Framework_TestCase {
-  
-  private static $_temp_themes = array();
-
-  private function _createThemeFile($contents)
-  {
-    $tmp = tempnam(sys_get_temp_dir(), 'Themer-PHPUnit-TestTheme');
-    $handle = fopen($tmp, 'w');
-    fwrite($handle, $contents);
-    fclose($handle);
-    static::$_temp_themes[] = $tmp;
-    return $tmp;
-  }
 
   // --------------------------------------------------------------------
   
@@ -51,7 +39,11 @@ class ThemeTest extends \PHPUnit_Framework_TestCase {
   public function reads_existing_files_as_theme_contents()
   {
     $contents = "This should be a valid theme!"; 
-    $tmp_theme = $this->_createThemeFile($contents);
+
+    $tmp_theme = tempnam(sys_get_temp_dir(), 'Themer-PHPUnit-TestTheme');
+    $handle = fopen($tmp_theme, 'w');
+    fwrite($handle, $contents);
+    fclose($handle);
     
     try
     {
