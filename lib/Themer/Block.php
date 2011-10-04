@@ -153,6 +153,5 @@ class Block {
     return str_replace(array(" ", "_"), "", $tag);
   }
 }
-
 /* End of file Block.php */
 /* Location: ./Themer/Block.php */

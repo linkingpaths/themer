@@ -121,6 +121,5 @@ class Variable {
     return preg_replace('/{URLEncoded'.$search.'}/i', urlencode($replace), $block);
   }
 }
-
 /* End of file Variable.php */
 /* Location: ./Themer/Variable.php */

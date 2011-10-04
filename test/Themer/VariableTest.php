@@ -160,6 +160,5 @@ EOF;
     );
   }
 }
-
 /* End of file VariableTest.php */
 /* Location: ./test/Themer/VariableTest.php */

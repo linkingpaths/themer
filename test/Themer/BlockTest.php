@@ -156,6 +156,5 @@ class BlockTest extends \PHPUnit_Framework_TestCase {
     );
   }
 }
-
 /* End of file BlockTest.php */
 /* Location: ./test/Themer/BlockTest.php */
