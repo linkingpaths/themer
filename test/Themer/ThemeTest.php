@@ -83,11 +83,7 @@ class ThemeTest extends \PHPUnit_Framework_TestCase {
   public function throws_exception_for_non_readable_file()
   {
     $this->setExpectedException('InvalidArgumentException');
-
-    $tmp_theme = $this->_createThemeFile("Non readable theme.");
-    chmod($tmp_theme, 0000);
-
-    new Theme($tmp_theme);
+    new Theme("http://invalid-url.asdklfaskd;jfhkl");
   }
 
   /**
