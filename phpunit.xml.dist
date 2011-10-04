@@ -12,6 +12,10 @@
   <filter>
     <whitelist addUncoveredFilesFromWhitelist="true">
       <directory suffix=".php">lib</directory>
+      <exclude>
+        <directory suffix=".php">lib/Themer/Test</directory>
+        <file>lib/Themer/Autoloader.php</file>
+      </exclude>
     </whitelist>
   </filter>
   <testsuites>
