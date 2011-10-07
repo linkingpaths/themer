@@ -1,0 +1,31 @@
+Title:            'Unititled'
+Description:      ''
+RSS:	            '/rss'
+CustomCSS:         ''
+Favicon:          '/themer_asset/avatars/16.gif'
+PortraitURL-16:	  '/themer_asset/avatars/16.gif'
+PortraitURL-24:   '/themer_asset/avatars/24.gif'
+PortraitURL-30:	  '/themer_asset/avatars/30.gif'
+PortraitURL-40:	  '/themer_asset/avatars/40.gif'
+PortraitURL-48:   '/themer_asset/avatars/48.gif'
+PortraitURL-64:   '/themer_asset/avatars/64.gif'
+PortraitURL-96:	  '/themer_asset/avatars/96.gif'
+PortraitURL-128:  '/themer_asset/avatars/128.gif'
+
+AskEnabled:         true
+AskLabel:           'Ask me anything'
+SubmissionsEnabled: true
+SubmitLabel:        Submit
+TwitterUsername:    ''
+
+_per_page: 6
+
+Pages:
+  -
+    Label: GitHub
+    URL: http://bit.ly/themer
+  -
+    Label: BitBucket
+    URL: http://bitbucket.org/
+    
+Posts:
