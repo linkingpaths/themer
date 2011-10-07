@@ -32,7 +32,7 @@ class Theme {
    * @access  protected
    * @var     Themer\Data
    */
-  protected $data = '';
+  protected $data = NULL;
 
   /**
    * @access  protected
