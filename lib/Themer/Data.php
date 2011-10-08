@@ -10,7 +10,7 @@ namespace Themer;
 /**
  * Themer's data handling class.
  */
-class Data implements ArrayAccess {
+class Data implements \ArrayAccess {
 
   /**
    * @access  protected
