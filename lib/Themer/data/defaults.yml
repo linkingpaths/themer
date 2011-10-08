@@ -18,6 +18,8 @@ SubmissionsEnabled: true
 SubmitLabel:        Submit
 TwitterUsername:    ''
 
+lang:
+
 _per_page: 6
 
 Pages:
