@@ -50,7 +50,7 @@ class Theme {
    * @throws  InvalidArgumentException if given a non-existent theme file
    * @throws  InvalidArgumentException if given an invalid theme file
    */
-  public function __construct($theme)
+  public function __construct($theme, Data $data = NULL)
   {    
     if (substr_count($theme, "\n") > 0)
     {
@@ -67,7 +67,7 @@ class Theme {
     }
 
     $this->original = $this->theme;
-    $this->data = new Data();
+    $this->data = (is_null($data)) ? new Data() : $data;
   }
 
   /**

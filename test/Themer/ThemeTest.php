@@ -85,12 +85,19 @@ class ThemeTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
+   * @covers  Themer\Theme::__construct
    * @covers  Themer\Theme::getData
    */
   public function enables_access_to_the_data_object()
   {
+    $data  = new Data;
     $theme = new Theme("Some theme\n");
-    
+
+    $this->assertEquals(
+      $data, $theme->getData(),
+      'Theme::__construct did not register the user-supplied data object.'
+    );
+
     $this->assertInstanceOf(
       'Themer\\Data', $theme->getData(),
       'Theme::getData did not return a Themer\\Data instance.'
