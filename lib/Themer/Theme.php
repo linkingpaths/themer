@@ -170,6 +170,8 @@ class Theme {
       $parser->render($this, $this->data);
     }
 
+   $this->theme = Block::cleanup($this->theme);
+
     return $this->getTheme();
   }
 

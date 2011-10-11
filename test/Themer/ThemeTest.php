@@ -188,9 +188,10 @@ class ThemeTest extends \PHPUnit_Framework_TestCase {
    */
   public function renders_a_theme()
   {
-    $content = "{variable}\n";
+    $content = "{variable}{block:ShouldBeCleaned}{/block:ShouldBeCleaned}\n";
     $expected = "It works!\n";
-    $theme = new Theme("{variable}\n");
+
+    $theme = new Theme($content);
     
     $mock_parser = $this->getMock('Themer\\Parser\\BaseParser', array('render'));
     $mock_parser->expects($this->any())
