@@ -7,6 +7,7 @@
  */
 namespace Themer;
 
+use Themer\Block;
 use Themer\Data;
 use Themer\Parser\BaseParser;
 use Themer\Variable;
