@@ -173,7 +173,7 @@ class Theme {
 
    $this->theme = Block::cleanup($this->theme);
 
-    return $this->getTheme();
+    return $this->theme;
   }
 
   /**
