@@ -10,7 +10,7 @@ namespace Themer;
 use Themer\Block;
 use Themer\Data;
 use Themer\Parser\BaseParser;
-use Themer\Variable;
+use Themer\Parser\VariableParser;
 
 /**
  * An base theme class for handling Tumblr template files.
@@ -79,7 +79,7 @@ class Theme {
    */
   public function __toString()
   {
-    return $this->getTheme();
+    return $this->theme);
   }
 
   /**
@@ -187,7 +187,7 @@ class Theme {
    */
   public function renderVariable($key, $value, $transform = TRUE)
   {
-    $this->theme = Variable::render($this->theme, $key, $value, $transform);
+    $this->theme = VariableParser::render($this->theme, $key, $value, $transform);
   }
 }
 /* End of file Theme.php */
