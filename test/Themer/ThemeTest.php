@@ -106,55 +106,25 @@ class ThemeTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme::__toString
    * @covers  Themer\Theme::getTheme
    * @covers  Themer\Theme::setTheme
-   * @covers  Themer\Theme::getOriginal
    */
   public function manages_theme_content()
   {
-    $original_content = "This should be the current content.\n";
-    $theme = new Theme($original_content);
+    $original = "This should be the current content.\n";
+    $theme = new Theme($original);
     
     $this->assertEquals(
-      $original_content, "$theme",
-      'Theme::__toString did not return the correct content.'
-    );
-    
-    $this->assertEquals(
-      $original_content, $theme->getTheme(),
+      $original, $theme->getTheme(),
       'Theme::getTheme did not return the correct content.'
     );
     
-    $new_content = "This should be the new content!";
-    $theme->setTheme($new_content);
+    $new = "This should be the new content!";
+    $theme->setTheme($new);
     
     $this->assertEquals(
-      $new_content, $theme->getTheme(),
+      $new, $theme->getTheme(),
       'Theme::setTheme did not correctly set the theme content.'
-    );
-    
-    $this->assertEquals(
-      $theme->getOriginal(), $original_content,
-      'Theme::getOriginal did not return the original theme content.'
-    );
-  }
-  
-  /**
-   * @test
-   * @covers  Themer\Theme::renderVariable
-   */
-  public function renders_variables()
-  {
-    $content = "{variable}\n";
-    $expected = "Tumblr is awesome!\n";
-    
-    $theme = new Theme($content);
-    $theme->renderVariable('variable', 'Tumblr is awesome!');
-    
-    $this->assertEquals(
-      $expected, $theme->getTheme(),
-      'Theme::renderVariable did not render the tag {variable} correctly.'
     );
   }
 

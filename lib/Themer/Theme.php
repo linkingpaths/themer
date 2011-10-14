@@ -10,24 +10,13 @@ namespace Themer;
 use Themer\Block;
 use Themer\Data;
 use Themer\Parser\BaseParser;
-use Themer\Parser\VariableParser;
+use Themer\Parser\BlockParser;
+use Themer\Variable;
 
 /**
  * An base theme class for handling Tumblr template files.
  */
-class Theme {
-
-  /**
-   * @access  protected
-   * @var     string  the parsed theme contents
-   */
-  protected $theme = '';
-
-  /**
-   * @access  protected
-   * @var     string  the original theme
-   */
-  protected $original = '';
+class Theme extends BlockParser {
 
   /**
    * @access  protected
@@ -53,33 +42,19 @@ class Theme {
    */
   public function __construct($theme, Data $data = NULL)
   {    
-    if (substr_count($theme, "\n") > 0)
-    {
-      $this->theme = $theme;
-    }
-    else
+    if (substr_count($theme, "\n") == 0)
     {
       if (FALSE == ($contents = @file_get_contents($theme)))
       {
         throw new \InvalidArgumentException('Theme file is invalid: '.$theme);
       }
 
-      $this->theme = $contents;
+      $theme = $contents;
     }
-
-    $this->original = $this->theme;
+    
     $this->data = (is_null($data)) ? new Data() : $data;
-  }
 
-  /**
-   * Returns the template contents
-   *
-   * @access  public
-   * @return  string  the theme contents
-   */
-  public function __toString()
-  {
-    return $this->theme);
+    parent::__construct($theme);
   }
 
   /**
@@ -121,7 +96,7 @@ class Theme {
    */
   public function getTheme()
   {
-    return $this->theme;
+    return $this->getBlock();
   }
 
   /**
@@ -133,18 +108,7 @@ class Theme {
    */
   public function setTheme($theme)
   {
-    $this->theme = $theme;
-  }
-
-  /**
-   * Returns the theme's original contents.
-   *
-   * @access  public
-   * @return  string  the theme's original contents
-   */
-  public function getOriginal()
-  {
-    return $this->original;
+    $this->setBlock($theme);
   }
 
   /**
@@ -171,23 +135,9 @@ class Theme {
       $parser->render($this, $this->data);
     }
 
-    $this->theme = Block::cleanup($this->theme);
+    $this->block = Block::cleanup($this->block);
 
-    return $this->theme;
-  }
-
-  /**
-   * Renders Tumblr template variables for the current theme.
-   * 
-   * @access  public
-   * @param   string  the variable key to render
-   * @param   string  the value of the variable
-   * @param   bool    whether the variable is transformable or not
-   * @return  void
-   */
-  public function renderVariable($key, $value, $transform = TRUE)
-  {
-    $this->theme = VariableParser::render($this->theme, $key, $value, $transform);
+    return $this->block;
   }
 }
 /* End of file Theme.php */
