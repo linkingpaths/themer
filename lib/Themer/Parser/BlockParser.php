@@ -89,6 +89,19 @@ class BlockParser {
   }
 
   /**
+   * Renders an array of template variables with indexes as the variable {tag}.
+   *
+   * @access  public
+   * @param   array   the data to use
+   * @param   bool    whether the variable is transformable or not
+   * @return  void
+   */
+  function renderVariables(array $data, $transform = TRUE)
+  {
+    $this->block = Variable::renderArray($this->block, $data, $transform);
+  }
+
+  /**
    * Renders a Tumblr template variable for the current block.
    *
    * @access  public

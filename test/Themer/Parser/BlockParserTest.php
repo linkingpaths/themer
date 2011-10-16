@@ -66,6 +66,28 @@ class BlockParserTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
+   * @covers  Themer\Parser\BlockParser::renderVariables
+   */
+  public function renders_an_array_of_variables()
+  {
+    $content = "{greeting}, {name}!";
+    $expected = "Hello, World!";
+    $data = array(
+      'greeting' => 'Hello',
+      'name'     => 'World',
+    );
+
+    $block = new BlockParser($content);
+    $block->renderVariables($data);
+
+    $this->assertEquals(
+      $expected, $block->getBlock(),
+      'BlockParser::renderVariables did not render an array of variables correctly.'
+    );
+  }
+
+  /**
+   * @test
    * @covers  Themer\Parser\BlockParser::renderBlock
    */
   public function renders_blocks_the_way_they_did_when_I_was_your_age()
