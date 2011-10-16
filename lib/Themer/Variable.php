@@ -18,6 +18,33 @@ class Variable {
   const MATCHER  = '/{([A-Za-z][A-Za-z0-9\-]*)}/i';
 
   /**
+   * Renders an array of variables with indexes used as template tags.
+   *
+   * @static
+   * @access  public
+   * @param   string  the block to parse
+   * @param   array   the data to use
+   * @param   bool    whether the variables are transformable
+   * @return  string  the parsed block
+   */
+  static public function renderArray($block, array $data, $transform = TRUE)
+  {
+    foreach ($data as $k => $v)
+    {
+      if (is_array($v))
+      {
+        $block = static::renderArray($block, $v, $transform);
+      }
+      else
+      {
+        $block = static::render($block, $k, $v, $transform);
+      }
+    }
+
+    return $block;
+  }
+
+  /**
    * Renders a specific Tumblr tag variable.
    *
    * @static

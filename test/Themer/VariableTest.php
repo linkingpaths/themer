@@ -159,6 +159,41 @@ EOF;
       'Variable::render transformed explicitly non-transformable variables'
     );
   }
+
+  /**
+   * @test
+   * @covers  Themer\Variable::renderArray
+   */
+  public function renders_an_array_of_variables()
+  {
+    $content = <<<BLOCK
+{line_1}
+{line_2}
+{line_3}
+{line_4}
+BLOCK;
+
+    $expected = <<<BLOCK
+Back in the days when I was a teenager
+Before I had status and before I had a pager
+You could find the Abstract listening to hip hop
+My pops used to say, it reminded him of bebop
+BLOCK;
+
+    $data = array(
+      'line_1' => 'Back in the days when I was a teenager',
+      'line_2' => 'Before I had status and before I had a pager',
+      array(
+        'line_3' => 'You could find the Abstract listening to hip hop',
+        'line_4' => 'My pops used to say, it reminded him of bebop'
+      )
+    );
+
+    $this->assertEquals(
+      $expected, Variable::renderArray($content, $data),
+      'Variable::renderArray did not render an array of variables correctly.'
+    );
+  }
 }
 /* End of file VariableTest.php */
 /* Location: ./test/Themer/VariableTest.php */
