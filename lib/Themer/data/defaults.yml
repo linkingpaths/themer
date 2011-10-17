@@ -37,6 +37,9 @@ TwitterUsername:    ''
 # Posts
 Posts: []
 
+# Localizations
+lang: []
+
 #------------------------------------------
 # Themer Configurations (private variables)
 #------------------------------------------
