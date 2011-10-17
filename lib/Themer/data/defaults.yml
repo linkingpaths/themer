@@ -1,3 +1,10 @@
+#-----------------------------------------------------------
+# Tumblr Template Defaults
+#
+# Documentation: http://www.tumblr.com/docs/en/custom_themes
+#-----------------------------------------------------------
+
+# Basic Variables
 Title:            'Untitled'
 Description:      ''
 RSS:	            '/rss'
@@ -12,22 +19,28 @@ PortraitURL-64:   '/themer_asset/avatars/64.gif'
 PortraitURL-96:	  '/themer_asset/avatars/96.gif'
 PortraitURL-128:  '/themer_asset/avatars/128.gif'
 
+# Navigation
 AskEnabled:         true
 AskLabel:           'Ask me anything'
 SubmissionsEnabled: true
 SubmitLabel:        Submit
+Pages:              []
+PreviousPage:
+NextPage:
+CurrentPage:
+TotalPages:
+
+# Twitter
+Twitter:            false
 TwitterUsername:    ''
 
-lang:
+# Posts
+Posts: []
 
-_per_page: 6
-
-Pages:
-  -
-    Label: GitHub
-    URL: http://bit.ly/themer
-  -
-    Label: BitBucket
-    URL: http://bitbucket.org/
-    
-Posts:
+#------------------------------------------
+# Themer Configurations (private variables)
+#------------------------------------------
+Config:
+  - language:     'en'
+  - page_type:    'IndexPage'
+  - per_page:     6
