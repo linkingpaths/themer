@@ -148,6 +148,31 @@ class BlockParser {
   }
 
   /**
+   * Renders each found block of a given block using a callback.
+   *
+   * @access  public
+   * @param   string  the block tag to render
+   * @param   array   the callback
+   * @return  void
+   */
+  public function renderEach($tag, array $data)
+  {
+    foreach (Block::find($this->block, $tag) as $cache)
+    {
+      $rendered = '';
+
+      foreach ($data as $v)
+      {
+        $block = new BlockParser(Block::render($cache, $tag));
+        $block->renderVariables($v);
+        $rendered .= $block->getBlock();
+      }
+
+      $this->replace($cache, $rendered);
+    }
+  }
+
+  /**
    * Replaces a given string with a new value within the current block.
    * 
    * @access  public

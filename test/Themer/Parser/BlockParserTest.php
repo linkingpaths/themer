@@ -135,6 +135,41 @@ BLOCK;
 
   /**
    * @test
+   * @covers  Themer\Parser\BlockParser::renderEach
+   */
+  public function renders_multiple_sets_of_data_for_one_block_template()
+  {
+    $data = array(
+      array('Name' => 'John'),
+      array('Name' => 'Paul'),
+      array('Name' => 'George'),
+      array('Name' => 'Ringo')
+    );
+
+    $content = <<<BLOCK
+{block:Test}
+{Name}{/block:Test}
+BLOCK;
+
+    $expected = <<<BLOCK
+
+John
+Paul
+George
+Ringo
+BLOCK;
+
+    $block = new BlockParser($content);
+    $block->renderEach('Test', $data);
+
+    $this->assertEquals(
+      $expected, $block->getBlock(),
+      'BlockParser::renderEach did not render each set of data for each found template'
+    );
+  }
+
+  /**
+   * @test
    * @covers  Themer\Parser\BlockParser::replace
    */
   public function replaces_strings_correctly()
