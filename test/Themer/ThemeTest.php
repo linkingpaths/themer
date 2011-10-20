@@ -80,7 +80,7 @@ class ThemeTest extends \PHPUnit_Framework_TestCase {
       'InvalidArgumentException', 'Theme file is invalid'
     );
 
-    new Theme("http://fake.github.com/");
+    new Theme("invalid-protocol://");
   }
 
   /**
