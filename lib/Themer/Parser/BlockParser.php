@@ -11,6 +11,7 @@ use Closure;
 use Themer\Block;
 use Themer\Theme;
 use Themer\Variable;
+use Themer\Parser\TemplateParser;
 
 /**
  * Parses block tags relevant to a specific theme.
@@ -169,6 +170,23 @@ class BlockParser {
       }
 
       $this->replace($cache, $rendered);
+    }
+  }
+
+  /**
+   * Renders a template block, with the original block being replaced by
+   * multiple renderings of that block.
+   *
+   * @access  public
+   * @return  void
+   */
+  public function renderTemplate($tag, Closure $callback)
+  {
+    foreach (Block::find($this->block, $tag) as $block)
+    {
+      $template = new TemplateParser(Block::render($block, $tag));
+      call_user_func($callback, $template);
+      $this->replace($block, $template->getTemplate());
     }
   }
 

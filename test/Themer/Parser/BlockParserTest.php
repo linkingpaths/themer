@@ -170,6 +170,45 @@ BLOCK;
 
   /**
    * @test
+   * @covers  Themer\Parser\BlockParser::renderTemplate
+   */
+  public function renders_block_templates()
+  {
+    $content = <<<BLOCK
+My Page Title
+
+{block:Template}
+{variable}{/block:Template}
+BLOCK;
+
+    $data = array('Good paragraph.', 'Great paragraph!');
+
+    $expected = <<<BLOCK
+My Page Title
+
+
+{$data[0]}
+{$data[1]}
+BLOCK;
+
+    $block = new BlockParser($content);
+    $block->renderTemplate('Template', function ($template) use ($data)
+    {
+      foreach ($data as $p)
+      {
+        $template->renderVariable('variable', $p);
+        $template->next();
+      }
+    });
+
+    $this->assertEquals(
+      $expected, $block->getBlock(),
+      'BlockParser::renderTemplate did not render the given template correctly.'
+    );
+  }
+
+  /**
+   * @test
    * @covers  Themer\Parser\BlockParser::replace
    */
   public function replaces_strings_correctly()
