@@ -110,7 +110,7 @@ class BlockParser {
    * @param   bool    whether the variable is transformable or not
    * @return  void
    */
-  function renderVariable($key, $value, $transform = TRUE)
+  public function renderVariable($key, $value, $transform = TRUE)
   {
     $this->block = Variable::render($this->block, $key, $value, $transform);
   }
