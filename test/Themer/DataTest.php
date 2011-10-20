@@ -109,21 +109,8 @@ class DataTest extends \PHPUnit_Framework_TestCase {
 
     // Themer\Data::offsetGet
     //    $value = $data['undefined'];
-    try 
-    {
-      $undefined = $data['undefined'];
-      $this->fail('Themer\Data::offsetGet should trigger an error for undefined offsets.');
-    }
-    catch (\PHPUnit_Framework_Error_Notice $e)
-    {
-      $this->assertEquals(
-        'Undefined index: undefined', $e->getMessage(),
-        'Themer\Data::offsetSet did not throw the correct exception message for undefined offset.'
-      );
-    }
-
     $this->assertNull(
-      @$data['undefined'],
+      $data['undefined'],
       'Themer\Data::offsetGet should return NULL for undefined offsets.'
     );
 

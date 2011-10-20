@@ -173,13 +173,7 @@ class Data implements \ArrayAccess {
    */
   public function offsetGet($offset)
   {
-    if ( ! isset($this->data[$offset]))
-    {
-      trigger_error("Undefined index: $offset", E_USER_NOTICE);
-      return NULL;
-    }
-
-    return $this->data[$offset];
+    return ( ! isset($this->data[$offset])) ? NULL : $this->data[$offset];
   }
 
   /**
