@@ -68,6 +68,7 @@ class TimeHelper extends \PHPUnit_Framework_TestCase {
       array($now - (60 * 10),             $now, '10 minutes ago'),
       array($now - (60 * 60 * 10),        $now, '10 hours ago'),
       array($now - (60 * 60 * 24 * 6),    $now, '6 days ago'),
+      array($now - (60 * 60 * 24 * 15),   $now, '2 weeks ago'),
       array(mktime(0, 0, 0, 11, 9, 1993), $now, 'on November 9, 1993')
     );
   }
