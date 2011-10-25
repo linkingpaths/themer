@@ -12,6 +12,19 @@ class TimeHelper extends \PHPUnit_Framework_TestCase {
   /**
    * @test
    * @covers  Themer\Helper\Time::getTag
+   */
+  public function throws_exception_for_invalid_tag()
+  {
+    $this->setExpectedException(
+      'InvalidArgumentException', 'Invalid time/date tag:'
+    );
+
+    Time::getTag(time(), 'InvalidTag');
+  }
+
+  /**
+   * @test
+   * @covers  Themer\Helper\Time::getTag
    * @covers  Themer\Helper\Time::getTags
    */
   public function formats_all_possbile_tags_at_once()
