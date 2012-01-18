@@ -58,7 +58,7 @@ class Variable {
   static public function render($block, $search, $replace = '', $transformable = TRUE)
   {
     $block = self::renderSimple($block, $search, $replace);
-    
+
     if ($transformable === TRUE)
     {
       $block = self::renderPlaintext($block, $search, $replace);
@@ -66,10 +66,10 @@ class Variable {
       $block = self::renderJSPlaintext($block, $search, $replace);
       $block = self::renderURLEncoded($block, $search, $replace);
     }
-    
+
     return $block;
   }
-  
+
   /**
    * Simply replace the tag with the value.
    *
@@ -84,7 +84,7 @@ class Variable {
   {
     return preg_replace('/{'.$search.'}/', $replace, $block);
   }
-  
+
   /**
    * Replace a Plaintext tagged variable with the plaintext value.
    *
@@ -97,13 +97,12 @@ class Variable {
    */
   public static function renderPlaintext($block, $search, $replace = '')
   {
-    
     return preg_replace('/{Plaintext'.$search.'}/i', htmlspecialchars($replace), $block);
   }
-  
+
   /**
    * Replace a JS tagged variable with the JSON encoded value.
-   * 
+   *
    * @static
    * @access  public
    * @param   string  the block to parse
@@ -115,11 +114,11 @@ class Variable {
   {
     return preg_replace('/{JS'.$search.'}/i', json_encode($replace), $block);
   }
-  
+
   /**
    * Replace a JSPlaintext tagged variable with the plaintext, JSON
    * encoded value.
-   * 
+   *
    * @static
    * @access  public
    * @param   string  the block to parse
@@ -132,7 +131,7 @@ class Variable {
     $replace = json_encode(htmlspecialchars($replace));
     return preg_replace('/{JSPlaintext'.$search.'}/i', $replace, $block);
   }
-  
+
   /**
    * Replace a URLEncoded tagged variable with a url encoded value.
    *

@@ -39,7 +39,7 @@ class Data implements \ArrayAccess {
    * @return  void
    */
   public function __construct()
-  { 
+  {
     $this->addPath(realpath(__DIR__ . DIRECTORY_SEPARATOR . 'data'));
   }
 
@@ -68,7 +68,7 @@ class Data implements \ArrayAccess {
    * @return  void
    */
   public function load($file)
-  { 
+  {
     $config = array();
     $found  = FALSE;
     
@@ -88,11 +88,11 @@ class Data implements \ArrayAccess {
       }
     }
 
-    if ( ! $found) 
+    if ( ! $found)
     {
       throw new \InvalidArgumentException("Data file not found: $file");
     }
-    
+
     $this->data = array_merge($this->data, $config);
   }
 
