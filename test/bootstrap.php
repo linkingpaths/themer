@@ -13,8 +13,5 @@ if ( ! defined('THEMER_BASEPATH'))
 require_once THEMER_BASEPATH.'/Autoloader.php';
 Themer\Autoloader::register();
 
-PHP_CodeCoverage_Filter::getInstance()->addDirectoryToBlacklist(PEAR_INSTALL_DIR);
-PHP_CodeCoverage_Filter::getInstance()->addDirectoryToBlacklist(PHP_LIBDIR);	
-
 /* End of file bootstrap.php */
 /* Location: ./test/bootstrap.php */
