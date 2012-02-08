@@ -14,7 +14,7 @@
       <directory suffix=".php">lib</directory>
       <exclude>
         <directory suffix=".php">lib/Themer/Test</directory>
-        <file>lib/Themer/Autoloader.php</file>
+        <file>lib/Themer/Utils/Autoloader.php</file>
         <file>lib/Themer/Parser/BaseParser.php</file>
       </exclude>
     </whitelist>
