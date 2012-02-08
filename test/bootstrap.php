@@ -10,8 +10,8 @@ if ( ! defined('THEMER_BASEPATH'))
 }
 
 // Load up the autoloader.
-require_once THEMER_BASEPATH.'/Autoloader.php';
-Themer\Autoloader::register();
+require_once THEMER_BASEPATH.'/Utils/Autoloader.php';
+Themer\Utils\Autoloader::register();
 
 /* End of file bootstrap.php */
 /* Location: ./test/bootstrap.php */
