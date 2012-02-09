@@ -7,3 +7,4 @@ php:
 before_script:
   - pyrus channel-discover pear.symfony.com
   - pyrus install symfony2/ClassLoader-2.0.3
+  - pyrus install symfony2/Yaml
