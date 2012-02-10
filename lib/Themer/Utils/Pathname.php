@@ -160,22 +160,16 @@ class Pathname {
    */
   public function slice($length = 0)
   {
+    if ($length == 0) return new self($this->root);
+
     $parts = $this->parts;
-    $root = $this->getRoot();
 
-    if (strlen($root) && strpos($parts[0], $root) !== 0)
+    if (strlen($this->root) && strpos($parts[0], $this->root) !== 0)
     {
-      $parts[0] = $root.$parts[0];
+      $parts[0] = $this->root.$parts[0];
     }
 
-    if ($length == 0)
-    {
-      return new self((strlen($root)) ? $root : '');
-    }
-
-    return static::build(array_slice(
-      $parts, 0, $length
-    ));
+    return static::build(array_slice($parts, 0, $length));
   }
 
   // --------------------------------------------------------------------
@@ -185,16 +179,14 @@ class Pathname {
    *
    * @access  public
    * @param   string  the path
+   * @param   string  the optional directory separator to use
    * @return  string  the root level indicator or an empty string
    */
-  static public function extractRoot($path = '')
+  static public function extractRoot($path = '', $ds = DIRECTORY_SEPARATOR)
   {
-    if (self::DS === "\\")
+    if ($ds === "\\" && preg_match('/^((\w:)?\\\\?)/', $path, $matches))
     {
-      if (preg_match('/^((\w:)?\\\\?)/', $path, $matches))
-      {
-        return $matches[1];
-      }
+      return $matches[1];
     }
     elseif (strlen($path) && strpos($path, '/') === 0)
     {
