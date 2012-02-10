@@ -191,7 +191,7 @@ class Pathname {
   {
     if (self::DS === "\\")
     {
-      if (preg_match('/^(\w:\\\\?)/', $path, $matches))
+      if (preg_match('/^((\w:)?\\\\?)/', $path, $matches))
       {
         return $matches[1];
       }
