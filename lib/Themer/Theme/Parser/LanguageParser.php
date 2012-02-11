@@ -5,7 +5,7 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer\Parser;
+namespace Themer\Theme\Parser;
 
 use Themer\Data;
 use Themer\Theme;
@@ -81,4 +81,4 @@ class LanguageParser extends BaseParser {
   }
 }
 /* End of file LanguageParser.php */
-/* Location: ./Themer/Parser/LanguageParser.php */
+/* Location: ./Themer/Theme/Parser/LanguageParser.php */

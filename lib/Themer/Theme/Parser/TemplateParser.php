@@ -5,7 +5,7 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer\Parser;
+namespace Themer\Theme\Parser;
 
 /**
  * Renders a block as a template.
@@ -43,4 +43,4 @@ class TemplateParser extends BlockParser {
   }
 }
 /* End of file TemplateParser.php */
-/* Location: ./Themer/Parser/TemplateParser.php */
+/* Location: ./Themer/Theme/Parser/TemplateParser.php */

@@ -5,17 +5,17 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer\Parser;
+namespace Themer\Theme\Parser;
 
 class BlockParserTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Parser\BlockParser::__construct
-   * @covers  Themer\Parser\BlockParser::__toString
-   * @covers  Themer\Parser\BlockParser::getBlock
-   * @covers  Themer\Parser\BlockParser::setBlock
-   * @covers  Themer\Parser\BlockParser::getOriginal
+   * @covers  Themer\Theme\Parser\BlockParser::__construct
+   * @covers  Themer\Theme\Parser\BlockParser::__toString
+   * @covers  Themer\Theme\Parser\BlockParser::getBlock
+   * @covers  Themer\Theme\Parser\BlockParser::setBlock
+   * @covers  Themer\Theme\Parser\BlockParser::getOriginal
    */
   public function manages_block_content()
   {
@@ -48,7 +48,7 @@ class BlockParserTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Parser\BlockParser::renderVariable
+   * @covers  Themer\Theme\Parser\BlockParser::renderVariable
    */
   public function renders_variables()
   {
@@ -66,7 +66,7 @@ class BlockParserTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Parser\BlockParser::renderVariables
+   * @covers  Themer\Theme\Parser\BlockParser::renderVariables
    */
   public function renders_an_array_of_variables()
   {
@@ -88,7 +88,7 @@ class BlockParserTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Parser\BlockParser::renderBlock
+   * @covers  Themer\Theme\Parser\BlockParser::renderBlock
    */
   public function renders_blocks_the_way_they_did_when_I_was_your_age()
   {
@@ -113,7 +113,7 @@ BLOCK;
 
   /**
    * @test
-   * @covers  Themer\Parser\BlockParser::renderBlock
+   * @covers  Themer\Theme\Parser\BlockParser::renderBlock
    */
   public function runs_callbacks_when_rendering_blocks()
   {
@@ -135,7 +135,7 @@ BLOCK;
 
   /**
    * @test
-   * @covers  Themer\Parser\BlockParser::renderEach
+   * @covers  Themer\Theme\Parser\BlockParser::renderEach
    */
   public function renders_multiple_sets_of_data_for_one_block_template()
   {
@@ -170,7 +170,7 @@ BLOCK;
 
   /**
    * @test
-   * @covers  Themer\Parser\BlockParser::renderTemplate
+   * @covers  Themer\Theme\Parser\BlockParser::renderTemplate
    */
   public function renders_block_templates()
   {
@@ -209,7 +209,7 @@ BLOCK;
 
   /**
    * @test
-   * @covers  Themer\Parser\BlockParser::replace
+   * @covers  Themer\Theme\Parser\BlockParser::replace
    */
   public function replaces_strings_correctly()
   {
@@ -226,4 +226,4 @@ BLOCK;
   }
 }
 /* End of file BlockParserTest.php */
-/* Location: ./test/Themer/Parser/BlockParserTest.php */
+/* Location: ./test/Themer/Theme/Parser/BlockParserTest.php */

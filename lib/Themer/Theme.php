@@ -8,8 +8,8 @@
 namespace Themer;
 
 use Themer\Data;
-use Themer\Parser\BaseParser;
-use Themer\Parser\BlockParser;
+use Themer\Theme\Parser\BaseParser;
+use Themer\Theme\Parser\BlockParser;
 use Themer\Theme\Block;
 use Themer\Theme\Variable;
 

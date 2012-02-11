@@ -5,7 +5,7 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer\Parser;
+namespace Themer\Theme\Parser;
 
 use Themer\Data;
 use Themer\Theme;
@@ -14,9 +14,9 @@ class LanguageParserTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Parser\LanguageParser::__construct
-   * @covers  Themer\Parser\LanguageParser::setLocale
-   * @covers  Themer\Parser\LanguageParser::getLocale
+   * @covers  Themer\Theme\Parser\LanguageParser::__construct
+   * @covers  Themer\Theme\Parser\LanguageParser::setLocale
+   * @covers  Themer\Theme\Parser\LanguageParser::getLocale
    */
   public function locale_can_be_set_by_the_user()
   {
@@ -37,7 +37,7 @@ class LanguageParserTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Parser\LanguageParser::preload
+   * @covers  Themer\Theme\Parser\LanguageParser::preload
    */
   public function preloads_a_given_locale()
   {
@@ -53,7 +53,7 @@ class LanguageParserTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Parser\LanguageParser::render
+   * @covers  Themer\Theme\Parser\LanguageParser::render
    */
   public function renders_themes_correctly()
   {
@@ -71,4 +71,4 @@ class LanguageParserTest extends \PHPUnit_Framework_TestCase {
   }
 }
 /* End of file LanguageParserTest.php */
-/* Location: ./test/Themer/Parser/LanguageParserTest.php */
+/* Location: ./test/Themer/Theme/Parser/LanguageParserTest.php */

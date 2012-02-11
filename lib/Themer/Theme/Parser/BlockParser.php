@@ -5,10 +5,10 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer\Parser;
+namespace Themer\Theme\Parser;
 
 use Closure;
-use Themer\Parser\TemplateParser;
+use Themer\Theme\Parser\TemplateParser;
 use Themer\Theme;
 use Themer\Theme\Block;
 use Themer\Theme\Variable;
@@ -204,4 +204,4 @@ class BlockParser {
   }
 }
 /* End of file BlockParser.php */
-/* Location: ./Themer/Parser/BlockParser.php */
+/* Location: ./Themer/Theme/Parser/BlockParser.php */

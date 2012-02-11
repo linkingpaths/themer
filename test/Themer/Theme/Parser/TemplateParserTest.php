@@ -5,13 +5,13 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer\Parser;
+namespace Themer\Theme\Parser;
 
 class TemplateParserTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Parser\TemplateParser
+   * @covers  Themer\Theme\Parser\TemplateParser
    */
   public function renders_templates_correctly()
   {
@@ -48,4 +48,4 @@ BLOCK;
   }
 }
 /* End of file TemplateParserTest.php */
-/* Location: ./test/Themer/Parser/TemplateParserTest.php */
+/* Location: ./test/Themer/Theme/Parser/TemplateParserTest.php */

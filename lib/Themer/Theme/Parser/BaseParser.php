@@ -5,7 +5,7 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer\Parser;
+namespace Themer\Theme\Parser;
 
 use Themer\Data;
 use Themer\Theme;
@@ -38,4 +38,4 @@ abstract class BaseParser {
   abstract public function render(Theme $theme, Data $data);
 }
 /* End of file BaseParser.php */
-/* Location: ./Themer/Parser/BaseParser.php */
+/* Location: ./Themer/Theme/Parser/BaseParser.php */

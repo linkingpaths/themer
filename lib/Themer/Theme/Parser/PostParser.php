@@ -5,10 +5,10 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer\Parser;
+namespace Themer\Theme\Parser;
 
 use Themer\Data;
-use Themer\Parser\BlockParser;
+use Themer\Theme\Parser\BlockParser;
 use Themer\Theme;
 
 /**
@@ -103,4 +103,4 @@ class PostParser extends BaseParser {
   }
 }
 /* End of file PostParser.php */
-/* Location: ./Themer/Parser/PostParser.php */
+/* Location: ./Themer/Theme/Parser/PostParser.php */

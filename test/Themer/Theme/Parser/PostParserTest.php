@@ -5,7 +5,7 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer\Parser;
+namespace Themer\Theme\Parser;
 
 use Themer\Data;
 use Themer\Theme;
@@ -14,7 +14,7 @@ class PostParserTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Parser\PostParser::render
+   * @covers  Themer\Theme\Parser\PostParser::render
    */
   public function renders_post_blocks()
   {
@@ -46,7 +46,7 @@ BLOCK;
 
   /**
    * @test
-   * @covers  Themer\Parser\PostParser::renderPostIndex
+   * @covers  Themer\Theme\Parser\PostParser::renderPostIndex
    */
   public function renders_post_index_blocks()
   {
@@ -85,7 +85,7 @@ BLOCK;
 
   /**
    * @test
-   * @covers  Themer\Parser\PostParser::renderPost
+   * @covers  Themer\Theme\Parser\PostParser::renderPost
    */
   public function renders_single_posts()
   {
@@ -126,7 +126,7 @@ BLOCK;
 
   /**
    * @test
-   * @covers  Themer\Parser\PostParser::renderTags
+   * @covers  Themer\Theme\Parser\PostParser::renderTags
    */
   public function renders_tag_blocks()
   {
@@ -164,4 +164,4 @@ BLOCK;
   }
 }
 /* End of file PostParserTest.php */
-/* Location: ./test/Themer/Parser/PostParserTest.php */
+/* Location: ./test/Themer/Theme/Parser/PostParserTest.php */

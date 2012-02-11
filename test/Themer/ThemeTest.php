@@ -137,7 +137,7 @@ class ThemeTest extends \PHPUnit_Framework_TestCase {
   {
     $theme = new Theme("Some theme\n");
     
-    $mock_parser = $this->getMock('Themer\\Parser\\BaseParser', array('render', 'preload'));
+    $mock_parser = $this->getMock('Themer\\Theme\\Parser\\BaseParser', array('render', 'preload'));
     $mock_parser->expects($this->exactly(2))
                 ->method('preload')
                 ->with($theme->getData());
@@ -163,7 +163,7 @@ class ThemeTest extends \PHPUnit_Framework_TestCase {
 
     $theme = new Theme($content);
     
-    $mock_parser = $this->getMock('Themer\\Parser\\BaseParser', array('render'));
+    $mock_parser = $this->getMock('Themer\\Theme\\Parser\\BaseParser', array('render'));
     $mock_parser->expects($this->any())
                 ->method('render')
                 ->with($theme, $theme->getData())
