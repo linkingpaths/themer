@@ -5,13 +5,13 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer\Helper;
+namespace Themer\Theme\Helper;
 
-class TimeHelper extends \PHPUnit_Framework_TestCase {
+class TimeTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Helper\Time::getTag
+   * @covers  Themer\Theme\Helper\Time::getTag
    */
   public function throws_exception_for_invalid_tag()
   {
@@ -24,8 +24,8 @@ class TimeHelper extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Helper\Time::getTag
-   * @covers  Themer\Helper\Time::getTags
+   * @covers  Themer\Theme\Helper\Time::getTag
+   * @covers  Themer\Theme\Helper\Time::getTags
    */
   public function formats_all_possbile_tags_at_once()
   {
@@ -88,7 +88,7 @@ class TimeHelper extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Helper\Time::relative
+   * @covers  Themer\Theme\Helper\Time::relative
    *
    * @dataProvider  relativeProvider
    */
@@ -98,4 +98,4 @@ class TimeHelper extends \PHPUnit_Framework_TestCase {
   }
 }
 /* End of file TimeTest.php */
-/* Location: ./test/Themer/Helper/TimeTest.php */
+/* Location: ./test/Themer/Theme/Helper/TimeTest.php */

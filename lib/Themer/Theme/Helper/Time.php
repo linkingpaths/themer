@@ -5,7 +5,7 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer\Helper;
+namespace Themer\Theme\Helper;
 
 /**
  * A helper class for rendering Tumblr timestamps
@@ -137,4 +137,4 @@ class Time {
   }
 }
 /* End of file Time.php */
-/* Location: ./path/to/file/Time.php */
+/* Location: ./Themer/Themer/Helper/Time.php */
