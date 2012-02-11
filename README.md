@@ -1,5 +1,7 @@
 # Themer
 
+[![Build Status](https://secure.travis-ci.org/tmbly/themer.png?branch=master)](http://travis-ci.org/tmbly/themer)
+
 Themer is a [Tumblr](http://www.tumblr.com) template parser for PHP 5.3+.
 
 ## License

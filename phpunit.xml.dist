@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit
-  bootstrap="test/bootstrap.php"
-  colors="true"
-  stopOnFailure="false">
+
+<phpunit  bootstrap="test/bootstrap.php"
+          colors="true"
+          stopOnFailure="false">
+
   <logging>
-    <log
-      type="coverage-html" 
-      target="build/coverage"
-      yui="true" />
+    <log  type="coverage-html" 
+          target="build/coverage"
+          yui="true" />
   </logging>
+
   <filter>
     <whitelist addUncoveredFilesFromWhitelist="true">
       <directory suffix=".php">lib</directory>
       <exclude>
         <directory suffix=".php">lib/Themer/Test</directory>
-        <file>lib/Themer/Autoloader.php</file>
+        <file>lib/Themer/Utils/Autoloader.php</file>
         <file>lib/Themer/Parser/BaseParser.php</file>
       </exclude>
     </whitelist>
   </filter>
+
   <testsuites>
-    <directory suffix="Test.php">test/Themer</directory>
+    <testsuite name="Themer Test Suite">
+      <directory suffix="Test.php">test/Themer</directory>
+    </testsuite>
   </testsuites>
 </phpunit>

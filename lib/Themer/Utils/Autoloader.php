@@ -5,7 +5,7 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer;
+namespace Themer\Utils;
 
 require_once 'Symfony/Component/ClassLoader/UniversalClassLoader.php';
 use Symfony\Component\ClassLoader\UniversalClassLoader;
@@ -36,7 +36,7 @@ class Autoloader {
     if (is_null(static::$_loader))
     {
       static::$_loader = new UniversalClassLoader;
-      static::$_loader->registerNamespace('Themer', realpath(__DIR__.'/../'));
+      static::$_loader->registerNamespace('Themer', realpath(__DIR__.'/../../'));
       spl_autoload_register(array(__CLASS__, 'load'), TRUE, FALSE);
     }
   }
@@ -85,4 +85,4 @@ class Autoloader {
   }
 }
 /* End of file Autoloader.php */
-/* Location: ./Themer/Autoloader.php */
+/* Location: ./Themer/Utils/Autoloader.php */
