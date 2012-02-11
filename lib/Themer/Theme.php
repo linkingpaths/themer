@@ -7,11 +7,11 @@
  */
 namespace Themer;
 
-use Themer\Block;
 use Themer\Data;
 use Themer\Parser\BaseParser;
 use Themer\Parser\BlockParser;
-use Themer\Variable;
+use Themer\Theme\Block;
+use Themer\Theme\Variable;
 
 /**
  * An base theme class for handling Tumblr template files.

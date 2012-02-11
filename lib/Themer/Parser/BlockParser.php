@@ -8,10 +8,10 @@
 namespace Themer\Parser;
 
 use Closure;
-use Themer\Block;
-use Themer\Theme;
-use Themer\Variable;
 use Themer\Parser\TemplateParser;
+use Themer\Theme;
+use Themer\Theme\Block;
+use Themer\Theme\Variable;
 
 /**
  * Parses block tags relevant to a specific theme.

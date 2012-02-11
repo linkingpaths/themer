@@ -5,7 +5,7 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer;
+namespace Themer\Theme;
 
 /**
  * Themer variable parser.Renders Tumblr tag variables 
@@ -148,4 +148,4 @@ class Variable {
   }
 }
 /* End of file Variable.php */
-/* Location: ./Themer/Variable.php */
+/* Location: ./Themer/Theme/Variable.php */

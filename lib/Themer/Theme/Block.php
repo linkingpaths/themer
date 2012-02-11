@@ -5,7 +5,7 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer;
+namespace Themer\Theme;
 
 /**
  * Themer block parser. Renders Tumblr block tags. 
@@ -154,4 +154,4 @@ class Block {
   }
 }
 /* End of file Block.php */
-/* Location: ./Themer/Block.php */
+/* Location: ./Themer/Theme/Block.php */
