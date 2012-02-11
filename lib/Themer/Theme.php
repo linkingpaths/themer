@@ -8,10 +8,10 @@
 namespace Themer;
 
 use Themer\Data;
+use Themer\Theme\Helper\Block;
+use Themer\Theme\Helper\Variable;
 use Themer\Theme\Parser\BaseParser;
 use Themer\Theme\Parser\BlockParser;
-use Themer\Theme\Block;
-use Themer\Theme\Variable;
 
 /**
  * An base theme class for handling Tumblr template files.

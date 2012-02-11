@@ -5,13 +5,13 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer\Theme;
+namespace Themer\Theme\Helper;
 
 class VariableTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Variable::renderSimple
+   * @covers Themer\Theme\Helper\Variable::renderSimple
    */
   public function renders_variables_correctly()
   {
@@ -26,7 +26,7 @@ class VariableTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Variable::renderPlaintext
+   * @covers Themer\Theme\Helper\Variable::renderPlaintext
    */
   public function renders_Plaintext_tags_correctly()
   {
@@ -43,7 +43,7 @@ class VariableTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Variable::renderJS
+   * @covers Themer\Theme\Helper\Variable::renderJS
    */
   public function renders_JS_tags_correctly()
   {
@@ -60,7 +60,7 @@ class VariableTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Variable::renderJSPlaintext
+   * @covers Themer\Theme\Helper\Variable::renderJSPlaintext
    */
   public function renders_JSPlaintext_tags_correctly()
   {
@@ -77,7 +77,7 @@ class VariableTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Variable::renderURLEncoded
+   * @covers Themer\Theme\Helper\Variable::renderURLEncoded
    */
   public function renders_URLEncoded_tags_correctly()
   {
@@ -94,12 +94,12 @@ class VariableTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Variable::render
-   * @covers  Themer\Theme\Variable::renderSimple
-   * @covers  Themer\Theme\Variable::renderPlaintext
-   * @covers  Themer\Theme\Variable::renderJS
-   * @covers  Themer\Theme\Variable::renderJSPlaintext
-   * @covers  Themer\Theme\Variable::renderURLEncoded
+   * @covers Themer\Theme\Helper\Variable::render
+   * @covers Themer\Theme\Helper\Variable::renderSimple
+   * @covers Themer\Theme\Helper\Variable::renderPlaintext
+   * @covers Themer\Theme\Helper\Variable::renderJS
+   * @covers Themer\Theme\Helper\Variable::renderJSPlaintext
+   * @covers Themer\Theme\Helper\Variable::renderURLEncoded
    */
   public function renders_multiple_variable_occurrences_in_a_given_block()
   {
@@ -133,8 +133,8 @@ EOF;
 
   /**
    * @test
-   * @covers  Themer\Theme\Variable::render
-   * @covers  Themer\Theme\Variable::renderSimple
+   * @covers Themer\Theme\Helper\Variable::render
+   * @covers Themer\Theme\Helper\Variable::renderSimple
    */
   public function does_not_transform_non_transformable_variable_tags()
   {
@@ -162,7 +162,7 @@ EOF;
 
   /**
    * @test
-   * @covers  Themer\Theme\Variable::renderArray
+   * @covers Themer\Theme\Helper\Variable::renderArray
    */
   public function renders_an_array_of_variables()
   {
@@ -196,4 +196,4 @@ BLOCK;
   }
 }
 /* End of file VariableTest.php */
-/* Location: ./test/Themer/Theme/VariableTest.php */
+/* Location: ./test/Themer/Theme/Helper/VariableTest.php */

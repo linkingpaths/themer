@@ -5,14 +5,14 @@
  * @link      http://github.com/tmbly/themer
  * @license   http://www.opensource.org/licenses/mit-license.html MIT
  */
-namespace Themer\Theme;
+namespace Themer\Theme\Helper;
 
 class BlockTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Block::render
-   * @covers  Themer\Theme\Block::getMatcher
+   * @covers Themer\Theme\Helper\Block::render
+   * @covers Themer\Theme\Helper\Block::getMatcher
    */
   public function renders_specified_blocks()
   {
@@ -26,8 +26,8 @@ class BlockTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Block::render
-   * @covers  Themer\Theme\Block::getMatcher
+   * @covers Themer\Theme\Helper\Block::render
+   * @covers Themer\Theme\Helper\Block::getMatcher
    */
   public function does_not_render_unspecified_blocks()
   {
@@ -41,10 +41,10 @@ class BlockTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Block::renderIf
-   * @covers  Themer\Theme\Block::formatIfBlockTag
-   * @covers  Themer\Theme\Block::remove
-   * @covers  Themer\Theme\Block::render
+   * @covers Themer\Theme\Helper\Block::renderIf
+   * @covers Themer\Theme\Helper\Block::formatIfBlockTag
+   * @covers Themer\Theme\Helper\Block::remove
+   * @covers Themer\Theme\Helper\Block::render
    */
   public function renders_if_blocks()
   {
@@ -59,10 +59,10 @@ class BlockTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Block::renderIf
-   * @covers  Themer\Theme\Block::formatIfBlockTag
-   * @covers  Themer\Theme\Block::remove
-   * @covers  Themer\Theme\Block::render
+   * @covers Themer\Theme\Helper\Block::renderIf
+   * @covers Themer\Theme\Helper\Block::formatIfBlockTag
+   * @covers Themer\Theme\Helper\Block::remove
+   * @covers Themer\Theme\Helper\Block::render
    */
   public function renders_if_not_blocks()
   {
@@ -77,7 +77,7 @@ class BlockTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Block::cleanup
+   * @covers Themer\Theme\Helper\Block::cleanup
    */
   public function cleans_up_valid_blocks()
   {
@@ -91,8 +91,8 @@ class BlockTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Block::remove
-   * @covers  Themer\Theme\Block::find
+   * @covers Themer\Theme\Helper\Block::remove
+   * @covers Themer\Theme\Helper\Block::find
    */
   public function removes_specified_blocks()
   {
@@ -107,8 +107,8 @@ class BlockTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Block::find
-   * @covers  Themer\Theme\Block::getMatcher
+   * @covers Themer\Theme\Helper\Block::find
+   * @covers Themer\Theme\Helper\Block::getMatcher
    */
   public function finds_specified_blocks()
   {
@@ -130,8 +130,8 @@ class BlockTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Block::find
-   * @covers  Themer\Theme\Block::getMatcher
+   * @covers Themer\Theme\Helper\Block::find
+   * @covers Themer\Theme\Helper\Block::getMatcher
    */
   public function find_with_no_results_returns_an_array()
   {
@@ -143,7 +143,7 @@ class BlockTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * @test
-   * @covers  Themer\Theme\Block::formatIfBlockTag
+   * @covers Themer\Theme\Helper\Block::formatIfBlockTag
    */
   public function formats_if_block_tags_correctly()
   {
@@ -157,4 +157,4 @@ class BlockTest extends \PHPUnit_Framework_TestCase {
   }
 }
 /* End of file BlockTest.php */
-/* Location: ./test/Themer/Theme/BlockTest.php */
+/* Location: ./test/Themer/Theme/Helper/BlockTest.php */
