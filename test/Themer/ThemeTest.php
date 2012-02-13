@@ -19,15 +19,14 @@ class ThemeTest extends \PHPUnit_Framework_TestCase {
    */
   public function allows_strings_with_new_lines_as_theme_contents()
   {
-    $contents = "This could be a theme\n";
-
     try
     {
+      $contents = "This could be a theme\n";
       $theme = new Theme($contents);
     }
     catch (\InvalidArgumentException $e)
     {
-      $this->fail('Theme::__construct should allow strings with new lines as the theme contents');
+      $this->fail('::__construct() should allow strings with new lines as a valid theme.');
       return;
     }
   }
