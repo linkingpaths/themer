@@ -30,7 +30,7 @@ This is a post!
 BLOCK;
 
     $data = new Data;
-    $post = array('PostType' => '', 'Tags' => array());
+    $post = array('PostType' => '', 'Tags' => array(), 'Time' => time());
     $data['Posts'] = array($post, $post);
 
     $theme = new Theme($block, $data);
@@ -95,7 +95,8 @@ BLOCK;
         array('Label' => 'Braden', 'Line' => 'Hello, World!'),
         array('Label' => 'World',  'Line' => 'Hello, Braden!'),
       ),
-      'Title' => "A quick one while she's away"
+      'Title' => "A quick one while she's away",
+      'Time'  => mktime(1, 1, 1, 1, 1, 2012)
     );
 
     $content = <<<BLOCK
@@ -103,6 +104,8 @@ BLOCK;
 {block:Title}{Title}{/block:Title}
 {block:Lines}
 {Label}: {Line}{/block:Lines}
+
+{Year}
 {/block:Chat}
 BLOCK;
 
@@ -111,6 +114,8 @@ A quick one while she's away
 
 Braden: Hello, World!
 World: Hello, Braden!
+
+2012
 BLOCK;
 
     $block = new BlockParser($content);

@@ -9,6 +9,7 @@ namespace Themer\Theme\Parser;
 
 use Themer\Data;
 use Themer\Theme;
+use Themer\Theme\Helper\Time;
 use Themer\Theme\Parser\BlockParser;
 
 /**
@@ -59,6 +60,7 @@ class PostParser extends BaseParser {
   public function renderPost(BlockParser $block, $post)
   {
     $block->renderBlock($post['PostType']);
+    $block->renderVariables(Time::getTags($post['Time']));
 
     foreach ($post as $k => $v)
     {
