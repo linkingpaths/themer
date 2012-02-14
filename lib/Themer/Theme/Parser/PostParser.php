@@ -8,8 +8,8 @@
 namespace Themer\Theme\Parser;
 
 use Themer\Data;
-use Themer\Theme\Parser\BlockParser;
 use Themer\Theme;
+use Themer\Theme\Parser\BlockParser;
 
 /**
  * Post parser for Tumblr template {block:Posts} blocks.
