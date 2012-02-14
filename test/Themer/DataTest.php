@@ -18,7 +18,7 @@ class DataTest extends \PHPUnit_Framework_TestCase {
   static public function setUpBeforeClass()
   {
     static::$data_path = implode(DIRECTORY_SEPARATOR, array(
-      THEMER_BASEPATH, 'data'
+      THEMER_BASEPATH, 'lib', 'Themer', 'data'
     ));
     
     static::$defaults = Yaml::parse(static::$data_path . DIRECTORY_SEPARATOR . 'defaults.yml');
